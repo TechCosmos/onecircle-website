@@ -15,18 +15,21 @@ import {
     useColorModeValue,
     useBreakpointValue,
     useDisclosure,
+    useColorMode,
   } from '@chakra-ui/react';
   import {
     HamburgerIcon,
     CloseIcon,
     ChevronDownIcon,
     ChevronRightIcon,
+    MoonIcon, 
+    SunIcon
   } from '@chakra-ui/icons';
 
   
   export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();
-  
+    const { colorMode, toggleColorMode } = useColorMode();
     return (
       <Box>
         <Flex
@@ -39,7 +42,6 @@ import {
           borderStyle={'solid'}
           borderColor={useColorModeValue('gray.200', 'gray.900')}
           align={'center'}
-          position="fixed" 
           w="100%">
           <Flex
             flex={{ base: 1, md: 'auto' }}
@@ -72,6 +74,9 @@ import {
             justify={'flex-end'}
             direction={'row'}
             spacing={6}>
+              <Button onClick={toggleColorMode}>
+                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+              </Button>
             <Button
               as={'a'}
               fontSize={'sm'}

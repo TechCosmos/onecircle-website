@@ -21,7 +21,7 @@ export default function CallToActionWithAnnotation() {
         />
       </Head>
       
-      <Container paddingTop={50}>
+      <Container paddingTop={50} >
         <Stack
           as={Box}
           textAlign={'center'}
