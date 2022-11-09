@@ -288,7 +288,7 @@ import {
         {
           label: 'Online communities',
           subLabel: 'Join the community',
-          href: '/communities',
+          href: '/community',
         },
         {
           label: 'Reseach',
