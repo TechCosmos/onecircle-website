@@ -1,12 +1,13 @@
 import React from 'react'
+import Circle from '../component/Circle/Circle'
 import Layout from '../component/Layout'
 
-const research = () => {
+const circle = () => {
   return (
     <Layout>
-    <div>research</div>
+     <Circle />
     </Layout>
   )
 }
 
-export default research
+export default circle

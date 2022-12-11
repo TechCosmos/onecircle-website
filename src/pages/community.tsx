@@ -1,15 +1,12 @@
 import React from 'react'
 import Community from '../component/Community/Community'
-import Footer from '../component/Footer/Footer'
-import Navbar from '../component/Navbar/Navbar'
+import Layout from '../component/Layout'
 
 const community = () => {
   return (
-    <>
-    <Navbar />
+    <Layout>
     <Community />
-    <Footer />
-    </>
+    </Layout>
   )
 }
 

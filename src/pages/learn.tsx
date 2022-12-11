@@ -1,15 +1,12 @@
 import React from 'react'
 import Learn from '../component/Learn/Learn'
-import Footer from '../component/Footer/Footer'
-import Navbar from '../component/Navbar/Navbar'
+import Layout from '../component/Layout'
 
 const learn = () => {
   return (
-    <>
-    <Navbar />
-    <Learn />
-    <Footer />
-    </>
+    <Layout>
+     <Learn />
+    </Layout>
   )
 }
 

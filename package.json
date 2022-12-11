@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@babel/core": "7.0.0",
     "@chakra-ui/icons": "^2.0.11",
     "@chakra-ui/react": "^2.3.6",
+    "@chakra-ui/system": "^2.3.4",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@fontsource/open-sans": "^4.5.13",
@@ -24,6 +26,7 @@
     "@types/node": "18.11.9",
     "@types/react": "18.0.24",
     "eslint": "8.26.0",
-    "eslint-config-next": "13.0.0"
+    "eslint-config-next": "13.0.0",
+    "typescript": "4.9.4"
   }
 }
