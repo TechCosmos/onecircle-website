@@ -32,13 +32,15 @@ import {
         <Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}>
         <Heading fontSize={'3xl'}>A Collaborative Community for Developers to Drive Innovation and Advance Technology</Heading>
         <Text color={'gray.600'} fontSize={'xl'}>
-        Onewanko is a community where developers can come together to tackle larger and more complex projects. Our platform provides a space for collaboration and sharing of ideas, and rewards developers with tokens based on their contributions to projects. This creates a dynamic and innovative environment where developers can push the boundaries of what is possible.
-       <br></br><br></br>
-       In addition to supporting collaboration among members, Onewanko also aims to support the broader technology community by sharing research and results. This helps to advance the field and drive innovation.
-       <br></br><br></br>
-       To further enhance the platform, we focus on providing opportunities for members to collaborate on larger and more complex projects. This includes developing tools and resources to support collaboration and distributed development, as well as providing support and resources to help members develop the skills and knowledge they need to work on these projects. By providing these resources and opportunities, we foster a more collaborative and innovative environment, driving growth and advancement in the technology field.
-       <br></br><br></br>
-       Overall, Onewanko is a unique and exciting community that brings together developers from all backgrounds and levels of experience. By providing a collaborative environment and a platform for sharing ideas and results, we are fostering innovation and growth in the world of technology. Join us and be a part of something special.
+             A community of collaborators to kick-start innovation towards technology progression
+              <br></br>
+             Onewanko is a community where developers can come together to contribute to large and complex projects.  We and you different collaborator are preparing spaces for collaboration and sharing of ideas, and also rewards for developers with tokens according to their contributions to projects.  This will create a healthy and innovative environment where developers can apply all their skills.
+              <br></br>
+             In addition to supporting collaboration between members, we also aim to support the wider technology community by sharing research and results.  This will help boost innovation as many open source projects allow by saving time.
+              <br></br>
+             To further improve the platform, we will provide tools and resources to support the community in their collaboration.  By providing these resources and opportunities, we foster a more collaborative and innovative environment, while boosting the growth and advancement of projects all around the world of technology.
+              <br></br>
+             We are a unique and exciting community that brings together developers from all backgrounds and experience levels.  By providing a collaborative environment and a platform for sharing ideas and results, for the x100+++ growth of technology.  Join us and let's build something special.
         </Text>
       </Stack>
       </Box>
