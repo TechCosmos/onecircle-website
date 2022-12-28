@@ -40,7 +40,7 @@ export default function WithBackgroundImage() {
               color={'white'}
               _hover={{ bg: 'blue.500' }}>
                 <Link href="/circle">
-                 <a>Show me more</a>
+                 Show me more
                 </Link>
             </Button>
             <Button
@@ -49,7 +49,7 @@ export default function WithBackgroundImage() {
               color={'white'}
               _hover={{ bg: 'whiteAlpha.500' }}>
                 <Link href="/learn">
-                 <a>Learn more</a>
+                 Learn more
                 </Link>
             </Button>
           </Stack>
