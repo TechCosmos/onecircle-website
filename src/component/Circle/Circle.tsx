@@ -1,13 +1,26 @@
-import React from 'react';
+import React from "react";
 import {
   Heading,
-  Container,
-} from '@chakra-ui/react';
+  VStack,
+  Box,
+  WrapItem,
+  Wrap,
+} from "@chakra-ui/react";
+import Card from "./Card/Card";
 
 export default function Circle() {
   return (
-    <Container maxW={'7xl'} p="12" paddingTop={'100'}>
-      <Heading as="h1">Coming...</Heading>
-    </Container>
+    <Box flexGrow="1" display="flex" alignItems="center" flexDir="column" pt={10}>
+      <VStack borderWidth="1px" w="4xl" spacing={4} borderRadius="lg" p={5}>
+        <Box w="100%">
+          <Heading size="md">Our Team</Heading>
+        </Box>
+        <Wrap w="100%">
+          <WrapItem minW="50%" maxW="100%" w="50%">
+            <Card />
+          </WrapItem>
+        </Wrap>
+      </VStack>
+    </Box>
   );
-};
+}
