@@ -16,7 +16,7 @@ import {
   Stack,
   Avatar,
 } from '@chakra-ui/react';
-import data from "../../data/blog.json"
+import data from "../../../data/blog.json"
 
 interface IBlogTags {
   tags: Array<string>;

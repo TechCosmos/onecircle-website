@@ -7,7 +7,7 @@ import {
   Link,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import data from "../../data/hero.json"
+import data from "../../../data/hero.json"
 
 export default function WithBackgroundImage() {
   return (

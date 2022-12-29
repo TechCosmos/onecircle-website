@@ -9,7 +9,7 @@ import {
     Text
   } from '@chakra-ui/react';
   import {} from '@chakra-ui/react';
-  import data from "../../data/hero.json"
+  import data from "../../../data/hero.json"
   
   
   export default function gridListWithCTA() {
