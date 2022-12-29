@@ -1,0 +1,11 @@
+{
+    "blog":{
+        "card":{
+            "tag":"blog",
+            "title": "Boost your conversion rate",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec condimentum quam arcu, eu tempus tortor molestie at.",
+            "author": "mike",
+            "date":"Dec 22, 2025"
+        }
+    }
+}

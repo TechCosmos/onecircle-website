@@ -7,6 +7,7 @@ import {
   Link,
   useBreakpointValue,
 } from '@chakra-ui/react';
+import data from "../../data/hero.json"
 
 export default function WithBackgroundImage() {
 
@@ -31,7 +32,7 @@ export default function WithBackgroundImage() {
             fontWeight={700}
             lineHeight={1.2}
             fontSize={useBreakpointValue({ base: '3xl', md: '4xl' })}>
-            We help to build the next generations of the technology.
+            {data.home.title}
           </Text>
           <Stack direction={'row'}>
             <Button
