@@ -31,6 +31,7 @@ export default function Card() {
             src={
               'https://geekforthewin.com/wp-content/uploads/2019/11/Best-Sci-Fi-Anime-Movies-featured.jpg'
             }
+            alt="image"
           />
         </Box>
         <Stack>
