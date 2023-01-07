@@ -87,7 +87,16 @@ export default function WithSubnavigation() {
           direction={'row'}
           spacing={6}>
 
-       <Button onClick={toggleColorMode}>
+      {isMobile ? null : (
+            <InputGroup>
+      <InputLeftElement
+      pointerEvents='none'
+      children={<SearchIcon color='gray.300' />}
+       />
+         <Input type='tel' placeholder='Search something...' />
+      </InputGroup>
+      )}
+           <Button onClick={toggleColorMode}>
                 {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
            </Button>
         </Stack>
