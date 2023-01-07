@@ -45,16 +45,6 @@ export default function WithBackgroundImage() {
                 Show me more
               </Link>
             </Button>
-            <Button
-              bg={"whiteAlpha.300"}
-              rounded={"full"}
-              color={"white"}
-              _hover={{ bg: "whiteAlpha.500" }}
-            >
-              <Link href="/learn" _hover={{ textDecoration: "none" }}>
-                Learn more
-              </Link>
-            </Button>
           </Stack>
         </Stack>
       </VStack>

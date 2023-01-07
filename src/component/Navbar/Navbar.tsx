@@ -10,17 +10,20 @@ import {
   Link,
   Popover,
   PopoverTrigger,
-  PopoverContent,
+  useMediaQuery,
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
   useColorMode,
   Image,
+  InputGroup,
+  InputLeftElement,
+  Input
 } from '@chakra-ui/react';
 import {
   HamburgerIcon,
   CloseIcon,
-  ChevronDownIcon,
+  SearchIcon,
   ChevronRightIcon,
   MoonIcon,
   SunIcon,
@@ -29,6 +32,7 @@ import {
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
+  const isMobile = useMediaQuery('(max-width: 440px)');
 
   return (
     <Box>
@@ -76,15 +80,25 @@ export default function WithSubnavigation() {
             <DesktopNav />
           </Flex>
         </Flex>
+
         <Stack
           flex={{ base: 1, md: 0 }}
           justify={'flex-end'}
           direction={'row'}
           spacing={6}>
+
+      {isMobile ? null : (
+            <InputGroup>
+      <InputLeftElement
+      pointerEvents='none'
+      children={<SearchIcon color='gray.300' />}
+       />
+         <Input type='tel' placeholder='Search something...' />
+      </InputGroup>
+      )}
            <Button onClick={toggleColorMode}>
                 {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
            </Button>
-
         </Stack>
       </Flex>
 
@@ -120,21 +134,6 @@ const DesktopNav = () => {
               </Link>
             </PopoverTrigger>
 
-            {navItem.children && (
-              <PopoverContent
-                border={0}
-                boxShadow={'xl'}
-                bg={popoverContentBgColor}
-                p={4}
-                rounded={'xl'}
-                minW={'sm'}>
-                <Stack>
-                  {navItem.children.map((child) => (
-                    <DesktopSubNav key={child.label} {...child} />
-                  ))}
-                </Stack>
-              </PopoverContent>
-            )}
           </Popover>
         </Box>
       ))}
@@ -142,7 +141,7 @@ const DesktopNav = () => {
   );
 };
 
-const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
+const DesktopSubNav = ({ label, href}: NavItem) => {
   return (
     <Link
       href={href}
@@ -159,7 +158,6 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
             fontWeight={500}>
             {label}
           </Text>
-          <Text fontSize={'sm'}>{subLabel}</Text>
         </Box>
         <Flex
           transition={'all .3s ease'}
@@ -189,11 +187,11 @@ const MobileNav = () => {
   );
 };
 
-const MobileNavItem = ({ label, children, href }: NavItem) => {
+const MobileNavItem = ({ label, href }: NavItem) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Stack spacing={4} onClick={children && onToggle}>
+    <Stack spacing={4}>
       <Flex
         py={2}
         as={Link}
@@ -208,41 +206,13 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
           color={useColorModeValue('gray.600', 'gray.200')}>
           {label}
         </Text>
-        {children && (
-          <Icon
-            as={ChevronDownIcon}
-            transition={'all .25s ease-in-out'}
-            transform={isOpen ? 'rotate(180deg)' : ''}
-            w={6}
-            h={6}
-          />
-        )}
       </Flex>
-
-      <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
-        <Stack
-          mt={2}
-          pl={4}
-          borderLeft={1}
-          borderStyle={'solid'}
-          borderColor={useColorModeValue('gray.200', 'gray.700')}
-          align={'start'}>
-          {children &&
-            children.map((child) => (
-              <Link key={child.label} py={2} href={child.href}>
-                {child.label}
-              </Link>
-            ))}
-        </Stack>
-      </Collapse>
     </Stack>
   );
 };
 
 interface NavItem {
   label: string;
-  subLabel?: string;
-  children?: Array<NavItem>;
   href?: string;
 }
 
@@ -252,52 +222,7 @@ const NAV_ITEMS: Array<NavItem> = [
     href: '/'
   },
   {
-    label: 'Our Work',
-    children: [
-      {
-        label: 'Circle',
-        subLabel: 'Find a project and start build',
-        href: '/circle',
-      },
-      {
-        label: 'Blog',
-        subLabel: 'topics about onewanko...',
-        href: '/blog',
-      },
-    ],
-  },
-  {
-    label: 'Learn',
-    href: '/learn',
-  },
-  {
-    label: 'Community',
-    children: [
-      {
-        label: 'Community',
-        subLabel: 'We are everywhere',
-        href: '/community',
-      },
-      {
-        label: 'Forum',
-        subLabel: 'Come talk',
-        href: '/forum',
-      },
-    ],
-  },
-  {
-    label: 'Story/ Vizion',
-    children: [
-      {
-        label: 'About Us',
-        subLabel: 'Who we are?',
-        href: '/about-us',
-      },
-      {
-        label: 'vizion',
-        subLabel: 'Prospective',
-        href: '/vizion',
-      },
-    ],
-  },
+    label: 'Circle',
+    href: '/circle'
+  }
 ];

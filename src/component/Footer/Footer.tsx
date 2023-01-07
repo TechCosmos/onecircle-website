@@ -47,9 +47,9 @@ export default function LargeWithLogoCentered() {
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
           <Stack align={"flex-start"}>
             <ListHeader>Onewanko work</ListHeader>
-            <Link href={"#"}>Overview</Link>
+            <Link href={"/"}>Overview</Link>
             <Stack direction={"row"} align={"center"} spacing={2}>
-              <Link href={"#"}>Finished projects</Link>
+              <Link href={"https://github.com/onewanko/"}>Finished projects</Link>
               <Tag
                 size={"sm"}
                 bg={useColorModeValue("blue.300", "bluee.800")}
@@ -60,21 +60,15 @@ export default function LargeWithLogoCentered() {
               </Tag>
             </Stack>
             <Link href={"/circle"}>Current projects</Link>
-            <Link href={"#"}>Contributing</Link>
+            <Link href={"https://github.com/onewanko/"}>Contributing</Link>
             <Link href={"#"}>Releases</Link>
           </Stack>
           <Stack align={"flex-start"}>
-            <ListHeader>Enterprise</ListHeader>
-            <Link href={"/about-us"}>About Us</Link>
-            <Link href={"#"}>Contact Us</Link>
-            <Link href={"#"}>Partners</Link>
-          </Stack>
-          <Stack align={"flex-start"}>
             <ListHeader>About onewanko</ListHeader>
+            <Link href={"/about-us"}>About Us</Link>
             <Link href={"#"}>Cookies Policy</Link>
             <Link href={"#"}>Privacy Policy</Link>
-            <Link href={"#"}>Terms of Service</Link>
-            <Link href={"#"}>Status</Link>
+            <Link href={"#"}>Contact Us</Link>
           </Stack>
           <Stack align={"flex-start"}>
             <ListHeader>Follow Us</ListHeader>
@@ -109,7 +103,7 @@ export default function LargeWithLogoCentered() {
           <Logo />
         </Flex>
         <Text pt={6} fontSize={"sm"} textAlign={"center"}>
-          © 2022 Onewanko. All rights reserved
+          © 2023 Onewanko. All rights reserved
         </Text>
       </Box>
     </Box>
