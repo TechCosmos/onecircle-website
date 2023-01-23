@@ -9,6 +9,7 @@ import {
   Tag,
   useColorModeValue,
   Image,
+  Center,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
@@ -43,8 +44,8 @@ export default function LargeWithLogoCentered() {
       bg={useColorModeValue("gray.50", "gray.900")}
       color={useColorModeValue("gray.700", "gray.200")}
     >
-      <Container as={Stack} maxW={"6xl"} py={10}>
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
+      <Center w="full" py={10}>
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={8} textAlign="center">
           <Stack align={"flex-start"}>
             <ListHeader>Onewanko work</ListHeader>
             <Link href={"/"}>Overview</Link>
@@ -81,7 +82,7 @@ export default function LargeWithLogoCentered() {
             </Link>
           </Stack>
         </SimpleGrid>
-      </Container>
+      </Center>
       <Box py={10}>
         <Flex
           align={"center"}

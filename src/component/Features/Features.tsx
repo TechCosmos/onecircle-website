@@ -1,28 +1,44 @@
-import React from 'react';
 import {
-    Box,
-    Stack,
-    chakra,
-    Heading,
-    GridItem,
-    Container,
-    Text
-  } from '@chakra-ui/react';
-  import {} from '@chakra-ui/react';
-  import data from "../../../data/hero.json"
-  
-  
-  export default function gridListWithCTA() {
-    return (
-      <Box as={Container} maxW="5xl" mt={14} p={4}>
-        <Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}>
-        <Heading fontSize={'3xl'}>{data.home.description_title}</Heading>
-        <Text color={'gray.600'} fontSize={'xl'}>
-            {data.home.description}
-             </Text>
-      </Stack>
-      </Box>
-    );
-  }
-  
-  
+  Box,
+  Heading,
+  Text,
+  VStack,
+  Flex,
+} from "@chakra-ui/react";
+import data from "../../../data/hero.json";
+import Image from "next/image";
+
+export default function gridListWithCTA() {
+
+  return (
+    <Box w="full" minH="100vh" background="blue.400" p={7} color="white">
+      <VStack textAlign={"center"} spacing={20}>
+        <Heading fontSize={"3xl"}>
+          {data.home.description_title}
+        </Heading>
+        <VStack spacing={20}>
+          <Flex textAlign={{base: "center",lg: "right"}} alignItems="center" gap={20} direction={{base: "column", lg: "row"}}>
+            <Text fontSize={"lg"} maxW="636px" order={{base: 2, lg: 1}}>{data.home.first_paragraph}</Text>
+            <Box order={{base: 1, lg: 2}} w="auto" h="auto">
+              <Image
+                src={"/assets/first-paragraph.svg"}
+                alt={""}
+                width="400"
+                height="200"
+              />
+            </Box>
+          </Flex>
+          <Flex textAlign={{base: "center",lg: "left"}} alignItems="center" gap={20} direction={{base: "column", lg: "row"}}>
+            <Image
+              src={"/assets/second-paragraph.svg"}
+              alt={""}
+              width="400"
+              height="200"
+            />
+          <Text fontSize={"lg"} maxW="636px">{data.home.second_paragraph}</Text>
+          </Flex>
+        </VStack>
+      </VStack>
+    </Box>
+  );
+}
