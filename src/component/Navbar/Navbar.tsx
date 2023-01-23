@@ -12,9 +12,10 @@ export default function WithSubnavigation() {
   const isMobile = useMediaQuery("(max-width: 440px)");
 
   return (
-    <Box position="absolute" top="0" left="0" w="100%" h="auto">
+    <Box w="100%" h="auto">
       <Flex
         bg={useColorModeValue("white", "gray.800")}
+        // bg={"transparent"}
         color={useColorModeValue("gray.600", "white")}
         minH={"80px"}
         py={{ base: 2 }}
@@ -109,7 +110,7 @@ const DesktopNav = () => {
             p={2}
             href={navItem.href ?? "#"}
             fontSize={"md"}
-            fontWeight="bold"
+            fontWeight="500"
             color={linkColor}
             _hover={{
               textDecoration: "none",

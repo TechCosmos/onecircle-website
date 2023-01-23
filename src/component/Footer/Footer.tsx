@@ -46,7 +46,7 @@ export default function LargeWithLogoCentered() {
     >
       <Center w="full" py={10}>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={8} textAlign="center">
-          <Stack align={"flex-start"}>
+          <Stack align={{base: "center", lg: "flex-start"}}>
             <ListHeader>Onewanko work</ListHeader>
             <Link href={"/"}>Overview</Link>
             <Stack direction={"row"} align={"center"} spacing={2}>
@@ -64,14 +64,14 @@ export default function LargeWithLogoCentered() {
             <Link href={"https://github.com/onewanko/"}>Contributing</Link>
             <Link href={"#"}>Releases</Link>
           </Stack>
-          <Stack align={"flex-start"}>
+          <Stack align={{base: "center", lg: "flex-start"}}>
             <ListHeader>About onewanko</ListHeader>
             <Link href={"/about-us"}>About Us</Link>
             <Link href={"#"}>Cookies Policy</Link>
             <Link href={"#"}>Privacy Policy</Link>
             <Link href={"#"}>Contact Us</Link>
           </Stack>
-          <Stack align={"flex-start"}>
+          <Stack align={{base: "center", lg: "flex-start"}}>
             <ListHeader>Follow Us</ListHeader>
             <Link href={"https://youtube.com/onewanko"}>Youtube</Link>
             <Link href={"https://twitter.com/onewankoorg"}>Twitter</Link>

@@ -1,13 +1,13 @@
-import React from 'react'
-import Circle from '../component/Circle/Circle'
-import Layout from '../component/Layout'
+import React from "react";
+import Circle from "../component/Circle/Circle";
+import Layout from "../component/Layout";
 
 const circle = () => {
   return (
     <Layout>
-     <Circle />
+      <Circle />
     </Layout>
-  )
-}
+  );
+};
 
-export default circle
+export default circle;
