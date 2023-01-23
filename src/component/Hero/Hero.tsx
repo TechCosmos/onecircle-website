@@ -30,7 +30,7 @@ export default function WithBackgroundImage() {
               fontWeight={700}
               lineHeight={1.2}
               textTransform="uppercase"
-              fontSize={useBreakpointValue({ base: '3xl', md: '4xl' })}>
+              fontSize={useBreakpointValue({ base: '2xl', md: '4xl' })}>
               We help to build<br/>the next generations<br/>of technology
             </Text>
             <Stack direction={"row"} alignSelf={{base: "center", md: "flex-end"}}>

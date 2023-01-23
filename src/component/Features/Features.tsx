@@ -17,7 +17,7 @@ export default function gridListWithCTA() {
           {data.home.description_title}
         </Heading>
         <VStack spacing={20}>
-          <Flex textAlign={{base: "center",lg: "right"}} alignItems="center" gap={20} direction={{base: "column", lg: "row"}}>
+          <Flex textAlign={{base: "center",lg: "right"}} alignItems="center" gap={{base: 15, lg: 20}} direction={{base: "column", lg: "row"}}>
             <Text fontSize={"lg"} maxW="636px" order={{base: 2, lg: 1}}>{data.home.first_paragraph}</Text>
             <Box order={{base: 1, lg: 2}} w="auto" h="auto">
               <Image
@@ -28,7 +28,7 @@ export default function gridListWithCTA() {
               />
             </Box>
           </Flex>
-          <Flex textAlign={{base: "center",lg: "left"}} alignItems="center" gap={20} direction={{base: "column", lg: "row"}}>
+          <Flex textAlign={{base: "center",lg: "left"}} alignItems="center" gap={{base: 15, lg: 20}} direction={{base: "column", lg: "row"}}>
             <Image
               src={"/assets/second-paragraph.svg"}
               alt={""}
