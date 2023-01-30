@@ -23,17 +23,26 @@ const fetcher = (url) =>
   });
 
 function TeamCard({ url, ...props }) {
-  const { data } = useSWR(url, fetcher);
-  console.log(data);
-  return (
-    <VStack bg={"white"} w="300px" maxW="300px" py={5} rounded="lg" spacing={3}>
-      <Avatar name={data.login} src={data.avatar_url} />
-      <Text fontWeight="bold">{data.login}</Text>
-      <Text maxW="70%" fontSize="sm" noOfLines={1}>
-        {data.bio ? data.bio : "Contibutor to Onewanko"}
-      </Text>
-    </VStack>
-  );
+  const { data, isLoading } = useSWR(url, fetcher);
+
+  if (!isLoading) {
+    return (
+      <VStack
+        bg={"white"}
+        w="300px"
+        maxW="300px"
+        py={5}
+        rounded="lg"
+        spacing={3}
+      >
+        <Avatar name={data.login} src={data.avatar_url} />
+        <Text fontWeight="bold">{data.login}</Text>
+        <Text maxW="70%" fontSize="sm" noOfLines={1}>
+          {data.bio ? data.bio : "Contibutor to Onewanko"}
+        </Text>
+      </VStack>
+    );
+  }
 }
 
 function ProjectCard() {
