@@ -1,15 +1,40 @@
 import {
+  Avatar,
   Box,
   Button,
   Center,
   Flex,
+  Heading,
   Link,
   Text,
   useBreakpointValue,
   VStack,
+  Wrap,
+  WrapItem,
 } from "@chakra-ui/react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
+import useSWR from "swr";
+
+const fetcher = (url) =>
+  fetch(url).then((response) => {
+    return response.json();
+  });
+
+function TeamCard({ url, ...props }) {
+  const { data } = useSWR(url, fetcher);
+  console.log(data);
+  return (
+    <VStack bg={"white"} w="300px" maxW="300px" py={5} rounded="lg" spacing={3}>
+      <Avatar name={data.login} src={data.avatar_url} />
+      <Text fontWeight="bold">{data.login}</Text>
+      <Text maxW="70%" fontSize="sm" noOfLines={1}>
+        {data.bio ? data.bio : "Contibutor to Onewanko"}
+      </Text>
+    </VStack>
+  );
+}
 
 function ProjectCard() {
   return (
@@ -78,7 +103,7 @@ function ProjectCard() {
   );
 }
 
-export default function Circle() {
+export default function Circle({ contributors, ...props }) {
   return (
     <>
       <Flex
@@ -135,13 +160,33 @@ export default function Circle() {
               width="651"
               height="490"
               alt={""}
+              priority
             />
           </Box>
         </Flex>
       </Flex>
-      <Center minH="100vh" bg="blue.400">
-        <ProjectCard />
-      </Center>
+      <VStack h="auto" bg="blue.400" p={7} w="full" align="start" spacing={4}>
+        <Heading fontSize="2xl" color="white">
+          Projects
+        </Heading>
+        <Box>
+          <ProjectCard />
+        </Box>
+      </VStack>
+      <VStack h="auto" bg="blue.400" p={7} w="full" align="start" spacing={4}>
+        <Heading fontSize="2xl" color="white">
+          Team
+        </Heading>
+        <Wrap>
+          {contributors.map((contributor) => {
+            return (
+              <WrapItem key={contributor.login}>
+                <TeamCard key={contributor.login} url={contributor.url} />
+              </WrapItem>
+            );
+          })}
+        </Wrap>
+      </VStack>
     </>
   );
 }
