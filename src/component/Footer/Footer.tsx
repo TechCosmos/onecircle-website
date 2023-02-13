@@ -18,16 +18,14 @@ import { BiMailSend } from 'react-icons/bi';
 const Logo = () => {
   return (
     <>
-      <Image
-        alt={"Hero Image"}
-        fit={"cover"}
-        align={"center"}
-        w={"100px"}
-        h={"40px"}
-        src={
-          "https://gateway.pinata.cloud/ipfs/QmaQNfwVAGj1vxesbWRPfnPeGRPaNZ12zmBRwPepNsufMK/Logo_pnd.png"
-        }
-      />
+       <a href="/">
+              <Image
+              src={useColorModeValue('assets/onewanko_logo.png', 'assets/onewanko_logo.png')}
+              alt="onewanko"
+              height={65}
+              width={105}
+              />
+        </a>
     </>
   );
 };

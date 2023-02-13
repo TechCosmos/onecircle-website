@@ -4,6 +4,7 @@ import {
   Flex,
   Link,
   Stack,
+  useColorModeValue,
   Text,
   useBreakpointValue,
   VStack,
@@ -15,11 +16,7 @@ export default function WithBackgroundImage() {
     <Center
       w={"full"}
       h={"calc(100vh - 80px)"}
-      // backgroundImage={
-      //   "url(https://gateway.pinata.cloud/ipfs/QmaQNfwVAGj1vxesbWRPfnPeGRPaNZ12zmBRwPepNsufMK/hero-img.jpg)"
-      // }
-      // backgroundSize={"cover"}
-      // backgroundPosition={"center center"}
+      bg={useColorModeValue('white', 'black')}
     >
       <Flex
         w="75%"
@@ -28,11 +25,12 @@ export default function WithBackgroundImage() {
       >
         <Image
           src={"/assets/hero-img.svg"}
-          alt={""}
+          alt={"hero-image"}
           width="843"
           height="611"
           priority
         />
+
         <VStack
           // w={"full"}
           justify={"center"}
@@ -42,19 +40,15 @@ export default function WithBackgroundImage() {
           // bgGradient={"linear(to-r, blackAlpha.600, transparent)"}
         >
           <Stack maxW={"2xl"} spacing={6}>
+            
             <Text
               color={"black"}
               fontWeight={700}
-              lineHeight={1.2}
-              textTransform="uppercase"
               fontSize={useBreakpointValue({ base: "2xl", md: "4xl" })}
             >
-              We help to build
-              <br />
-              the next generations
-              <br />
-              of technology
+              We help to build the next <br /> generations of AI
             </Text>
+
             <Stack
               direction={"row"}
               alignSelf={{ base: "center", md: "flex-end" }}
@@ -70,10 +64,15 @@ export default function WithBackgroundImage() {
                   Show me more
                 </Link>
               </Button>
+
             </Stack>
+            
           </Stack>
+
         </VStack>
+
       </Flex>
+
     </Center>
   );
 }

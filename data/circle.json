@@ -1,9 +1,8 @@
-{
-  "card":
-      {
-        "title": "Mizz Token",
-        "description":"here is the circle of who build the 'Mizz Token' A game to bet your token in a gomoku game.",
-        "tag": "Mizz game",
-        "link":"https://github.com/onewanko/Mizz-Token"
-      }
-}
+[
+  {
+    "title": "Open Language",
+    "description":"The Open Language project presents a cutting-edge AI solution for real-time video translation, aimed at addressing the issue of language barriers in the metaverse.",
+    "tag": "Open-Language",
+    "link":"https://github.com/onewanko/Open-Language"
+  }
+]

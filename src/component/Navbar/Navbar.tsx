@@ -14,7 +14,7 @@ export default function WithSubnavigation() {
   return (
     <Box w="100%" h="auto">
       <Flex
-        bg={useColorModeValue("white", "gray.800")}
+        bg={useColorModeValue('white', 'black')}
         // bg={"transparent"}
         color={useColorModeValue("gray.600", "white")}
         minH={"80px"}
@@ -49,16 +49,14 @@ export default function WithSubnavigation() {
               fontFamily={"heading"}
               color={useColorModeValue("gray.800", "white")}
             >
+            <a href="/">
               <Image
-                alt={"Hero Image"}
-                fit={"cover"}
-                align={"center"}
-                w={"100px"}
-                h={"35px"}
-                src={
-                  "https://gateway.pinata.cloud/ipfs/QmaQNfwVAGj1vxesbWRPfnPeGRPaNZ12zmBRwPepNsufMK/Logo_pnd.png"
-                }
+              src={useColorModeValue('assets/onewanko_logo.png', 'asssets/onewanko_logo.png')}
+              alt="onewanko"
+              height={65}
+              width={105}
               />
+              </a>
             </Text>
             {/* Menus */}
             <Flex display={{ base: "none", md: "flex" }} ml={10}>
@@ -109,8 +107,8 @@ const DesktopNav = () => {
           <Link
             p={2}
             href={navItem.href ?? "#"}
-            fontSize={"md"}
-            fontWeight="500"
+            fontSize={"15"}
+            fontWeight="800"
             color={linkColor}
             _hover={{
               textDecoration: "none",
@@ -140,7 +138,7 @@ const DesktopSubNav = ({ label, href }: NavItem) => {
           <Text
             transition={"all .3s ease"}
             _groupHover={{ color: "blue.400" }}
-            fontWeight={500}
+            fontWeight={600}
           >
             {label}
           </Text>
@@ -218,13 +216,5 @@ const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Blog",
     href: "/blog",
-  },
-  {
-    label: "Story",
-    href: "/story",
-  },
-  {
-    label: "Game",
-    href: "/game",
-  },
+  }
 ];

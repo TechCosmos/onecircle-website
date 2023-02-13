@@ -1,8 +1,8 @@
 import {
-  Avatar,
+  Avatar, Grid,
   Box,
   Button,
-  Center,
+  Container,
   Flex,
   Heading,
   Link,
@@ -10,12 +10,13 @@ import {
   useBreakpointValue,
   VStack,
   Wrap,
-  WrapItem,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import useSWR from "swr";
+import data from "../../../data/circle.json";
 
 const fetcher = (url) =>
   fetch(url).then((response) => {
@@ -45,70 +46,72 @@ function TeamCard({ url, ...props }) {
   }
 }
 
-function ProjectCard() {
+
+interface ProjectCardData {
+  title: string;
+  description: string;
+  tag: string;
+  link: string;
+}
+
+interface ProjectCardProps {
+  data: ProjectCardData[];
+}
+
+function ProjectCard({ data }: ProjectCardProps) {
   return (
-    <VStack bg={"white"} maxW="300px" py={5} rounded="lg" spacing={5}>
-      <Flex
-        alignItems="center"
-        justifyContent="space-between"
-        w="full"
-        px={5}
-        pos="relative"
-      >
-        <Box
-          pos="absolute"
-          transform="translateY(50%, -50%)"
-          borderBottom="1px solid"
-          borderColor="gray.400"
-          w="full"
-          left="0"
-          zIndex={0}
-        ></Box>
-        <Box w="50px" h="50px" rounded="full" bg={"red"} zIndex={1}></Box>
-        <Text
-          fontSize="lg"
-          textTransform="uppercase"
-          alignSelf="start"
-          zIndex={1}
-          color="gray.400"
-        >
-          Added time
-        </Text>
-      </Flex>
-      <VStack spacing={0} align="start" w="full" px={5}>
-        <Text fontSize="xl" fontWeight="bold" textTransform="uppercase">
-          Project name
-        </Text>
-        <Text textTransform="uppercase" fontSize="sm" color="gray.400">
-          Project role
-        </Text>
-      </VStack>
-      <Box w="full" px={5}>
-        <Text fontSize="sm" noOfLines={3}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quia
-          cumque officia autem cupiditate quos laborum tempora error nesciunt
-          sed? Blanditiis minima consequatur enim, repellat, fugiat numquam
-          repudiandae sint corporis suscipit maxime tempore. Soluta, blanditiis
-          quae similique nemo veritatis ratione quis sint deleniti alias optio,
-          debitis eum exercitationem repudiandae possimus.
-        </Text>
-      </Box>
-      <Box px={5} w="full">
-        <Button
-          bg={"blue.400"}
-          color={"white"}
-          w="full"
-          _hover={{ bg: "blue.500" }}
-          size="lg"
-          aria-label={""}
-          rightIcon={<FaArrowRight />}
-        >
-          <Link href="/circle" _hover={{ textDecoration: "none" }}>
-            Learn more
-          </Link>
-        </Button>
-      </Box>
-    </VStack>
+    <>
+      {data.map((card) => (
+        <VStack bg={"white"} maxW="300px" py={5} rounded="lg" spacing={5}>
+          <Flex
+            alignItems="center"
+            justifyContent="space-between"
+            w="full"
+            px={5}
+            pos="relative"
+          >
+            <Box
+              pos="absolute"
+              transform="translateY(50%, -50%)"
+              borderBottom="1px solid"
+              borderColor="gray.400"
+              w="full"
+              left="0"
+              zIndex={0}
+            ></Box>
+            <Box w="50px" h="50px" rounded="full" bg={"blue.400"} zIndex={1}></Box>
+          </Flex>
+          <VStack spacing={0} align="start" w="full" px={5}>
+            <Text fontSize="xl" fontWeight="bold" textTransform="uppercase" color="black">
+              {card.title}
+            </Text>
+            <Text textTransform="uppercase" fontSize="sm" color="bleu.400">
+              {card.tag}
+            </Text>
+          </VStack>
+          <Box w="full" px={5}>
+            <Text fontSize="sm" noOfLines={3} color="gray.400">
+              {card.description}
+            </Text>
+          </Box>
+          <Box px={5} w="full">
+            <Button
+              bg={"blue.400"}
+              color="white"
+              w="full"
+              _hover={{ bg: "blue.500" }}
+              size="lg"
+              aria-label={""}
+              rightIcon={<FaArrowRight />}
+            >
+              <Link href={card.link} _hover={{ textDecoration: "none" }} color="white">
+                Learn more
+              </Link>
+            </Button>
+          </Box>
+        </VStack>
+      ))}
+    </>
   );
 }
 
@@ -116,6 +119,7 @@ export default function Circle({ contributors, ...props }) {
   return (
     <>
       <Flex
+        bg={useColorModeValue('white', 'black')}
         minH="calc(100vh - 80px)"
         justifyContent="center"
         alignItems="center"
@@ -144,10 +148,11 @@ export default function Circle({ contributors, ...props }) {
                 Join our community
               </Text>
               <Text
+                color={"gray.400"}
                 fontSize={{ base: "sm", md: "lg" }}
                 textTransform="uppercase"
               >
-                "Code together, Grow together"
+                "Build together, Grow together"
               </Text>
             </VStack>
             <Button
@@ -178,24 +183,32 @@ export default function Circle({ contributors, ...props }) {
         <Heading fontSize="2xl" color="white">
           Projects
         </Heading>
-        <Box>
-          <ProjectCard />
+       
+        <Box m={'auto'}>
+        <Container maxW={'7xl'} pt="20" mx={'auto'}>
+        <Grid templateColumns={{ base: 'repeat(1, 1fr)', sm: 'repeat(1, 1fr)' , md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)', xl: 'repeat(4, 1fr)' }} gap={6} px={6}>
+          <ProjectCard data={data}/>
+          </Grid> 
+          </Container>
         </Box>
       </VStack>
       <VStack h="auto" bg="blue.400" p={7} w="full" align="start" spacing={4}>
         <Heading fontSize="2xl" color="white">
           Team
         </Heading>
-        <Wrap>
-          {contributors.map((contributor) => {
-            return (
-              <WrapItem key={contributor.login}>
-                <TeamCard key={contributor.login} url={contributor.url} />
-              </WrapItem>
-            );
-          })}
-        </Wrap>
+        
+         
       </VStack>
     </>
   );
 }
+
+ // <Wrap>
+         // {contributors.map((contributor: {login: string, url: string}) => {
+         //  return (
+         //      <WrapItem key={contributor.login}>
+         //        <TeamCard key={contributor.login} url={contributor.url} />
+         //       </WrapItem>
+         //  );
+         //     })}
+         //  </Wrap> 
