@@ -20,6 +20,7 @@ interface Props {
 
 export default function Card() {
   const bgColor = useColorModeValue('white', 'gray.900');
+  const Color = useColorModeValue('gray.700', 'white');
 
   return (
     <>
@@ -62,7 +63,7 @@ export default function Card() {
               {tag}
             </Text>
             <Heading
-              color={useColorModeValue('gray.700', 'white')}
+              color={Color}
               fontSize={'2xl'}
               fontFamily={'body'}
             >
