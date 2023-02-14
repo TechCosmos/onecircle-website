@@ -14,17 +14,17 @@ import { FaArrowRight } from "react-icons/fa";
 import data from "../../../../data/circle.json";
 
 export default function Card() {
+  
   return (
         <>
            {data.map(({ title, tag, description, link }) => (
-            <VStack bg={"white"} maxW="300px" py={5} rounded="lg" spacing={5}>
+            <VStack bg={"white"} maxW="300px" py={5} rounded="lg" spacing={5} key={title}>
               <Flex
                 alignItems="center"
                 justifyContent="space-between"
                 w="full"
                 px={5}
                 pos="relative"
-                key={title}
               >
                 <Box
                   pos="absolute"

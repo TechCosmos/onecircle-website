@@ -10,15 +10,24 @@ import {
 } from '@chakra-ui/react';
 import data from "../../../../data/blog.json";
 
+interface Props {
+  tag: string;
+  title: string;
+  description: string;
+  author: string;
+  date: string;
+}
 
 export default function Card() {
+  const bgColor = useColorModeValue('white', 'gray.900');
+
   return (
     <>
       {data.map(({ tag, title, description, author, date }) => (
         <Box
           maxW={'445px'}
           w={'full'}
-          bg={useColorModeValue('white', 'gray.900')}
+          bg={bgColor}
           boxShadow={'2xl'}
           rounded={'md'}
           p={6}
