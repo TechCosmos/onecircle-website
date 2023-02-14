@@ -13,12 +13,13 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import Image from "next/image";
+import { title } from "process";
 import { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import useSWR from "swr";
-import data from "../../../data/circle.json";
+import Card from "./Card/Card";
 
-const fetcher = (url) =>
+const fetcher = (url: RequestInfo | URL) =>
   fetch(url).then((response) => {
     return response.json();
   });
@@ -44,75 +45,6 @@ function TeamCard({ url, ...props }) {
       </VStack>
     );
   }
-}
-
-
-interface ProjectCardData {
-  title: string;
-  description: string;
-  tag: string;
-  link: string;
-}
-
-interface ProjectCardProps {
-  data: ProjectCardData[];
-}
-
-function ProjectCard({ data }: ProjectCardProps) {
-  return (
-    <>
-      {data.map((card) => (
-        <VStack bg={"white"} maxW="300px" py={5} rounded="lg" spacing={5}>
-          <Flex
-            alignItems="center"
-            justifyContent="space-between"
-            w="full"
-            px={5}
-            pos="relative"
-          >
-            <Box
-              pos="absolute"
-              transform="translateY(50%, -50%)"
-              borderBottom="1px solid"
-              borderColor="gray.400"
-              w="full"
-              left="0"
-              zIndex={0}
-            ></Box>
-            <Box w="50px" h="50px" rounded="full" bg={"blue.400"} zIndex={1}></Box>
-          </Flex>
-          <VStack spacing={0} align="start" w="full" px={5}>
-            <Text fontSize="xl" fontWeight="bold" textTransform="uppercase" color="black">
-              {card.title}
-            </Text>
-            <Text textTransform="uppercase" fontSize="sm" color="bleu.400">
-              {card.tag}
-            </Text>
-          </VStack>
-          <Box w="full" px={5}>
-            <Text fontSize="sm" noOfLines={3} color="gray.400">
-              {card.description}
-            </Text>
-          </Box>
-          <Box px={5} w="full">
-            <Button
-              bg={"blue.400"}
-              color="white"
-              w="full"
-              _hover={{ bg: "blue.500" }}
-              size="lg"
-              aria-label={""}
-              rightIcon={<FaArrowRight />}
-            >
-              <Link href={card.link} _hover={{ textDecoration: "none" }} color="white">
-                Learn more
-              </Link>
-            </Button>
-          </Box>
-        </VStack>
-      ))}
-    </>
-  );
 }
 
 export default function Circle({ contributors, ...props }) {
@@ -187,7 +119,7 @@ export default function Circle({ contributors, ...props }) {
         <Box m={'auto'}>
         <Container maxW={'7xl'} pt="20" mx={'auto'}>
         <Grid templateColumns={{ base: 'repeat(1, 1fr)', sm: 'repeat(1, 1fr)' , md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)', xl: 'repeat(4, 1fr)' }} gap={6} px={6}>
-          <ProjectCard data={data}/>
+          <Card />
           </Grid> 
           </Container>
         </Box>

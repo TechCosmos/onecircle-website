@@ -18,14 +18,14 @@ import { BiMailSend } from 'react-icons/bi';
 const Logo = () => {
   return (
     <>
-       <a href="/">
+       <Link href="/">
               <Image
               src={useColorModeValue('assets/onewanko_logo.png', 'assets/onewanko_logo.png')}
               alt="onewanko"
               height={65}
               width={105}
               />
-        </a>
+        </Link>
     </>
   );
 };

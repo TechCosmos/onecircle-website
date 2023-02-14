@@ -49,14 +49,14 @@ export default function WithSubnavigation() {
               fontFamily={"heading"}
               color={useColorModeValue("gray.800", "white")}
             >
-            <a href="/">
+            <Link href="/">
               <Image
               src={useColorModeValue('assets/onewanko_logo.png', 'asssets/onewanko_logo.png')}
               alt="onewanko"
               height={65}
               width={105}
               />
-              </a>
+              </Link>
             </Text>
             {/* Menus */}
             <Flex display={{ base: "none", md: "flex" }} ml={10}>

@@ -4,7 +4,6 @@ import {
   Box, Grid,
 } from '@chakra-ui/react';
 import Card from "./Card/Card";
-import data from "../../../data/blog.json"
 
 
 
