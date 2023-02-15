@@ -1,1 +1,1 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6d2e51a7-8b82-4100-b21e-8bca8608b7f8/deploy-status)](https://app.netlify.com/sites/zingy-crumble-7ac3f7/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d199c89e-4f97-4298-9e3e-b2c2aad0d92a/deploy-status)](https://app.netlify.com/sites/regal-torrone-7bcb6e/deploys)
