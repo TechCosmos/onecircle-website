@@ -9,13 +9,9 @@ import {
   Text,
   useBreakpointValue,
   VStack,
-  Wrap,
   useColorModeValue,
 } from "@chakra-ui/react";
-import Image from "next/image";
-import { title } from "process";
-import { useEffect, useState } from "react";
-import { FaArrowRight } from "react-icons/fa";
+import Image from "next/image";;
 import useSWR from "swr";
 import Card from "./Card/Card";
 
@@ -23,7 +19,8 @@ const fetcher = (url: RequestInfo | URL) =>
   fetch(url).then((response) => {
     return response.json();
   });
-
+  
+/*
 function TeamCard({ url, ...props }) {
   const { data, isLoading } = useSWR(url, fetcher);
 
@@ -46,8 +43,11 @@ function TeamCard({ url, ...props }) {
     );
   }
 }
+*/
 
 export default function Circle({ contributors, ...props }) {
+  const legend = '"Build together, Grow together"'
+
   return (
     <>
       <Flex
@@ -84,7 +84,7 @@ export default function Circle({ contributors, ...props }) {
                 fontSize={{ base: "sm", md: "lg" }}
                 textTransform="uppercase"
               >
-                "Build together, Grow together"
+                {legend}
               </Text>
             </VStack>
             <Button
@@ -128,7 +128,6 @@ export default function Circle({ contributors, ...props }) {
         <Heading fontSize="2xl" color="white">
           Team
         </Heading>
-        
          
       </VStack>
     </>

@@ -6,11 +6,13 @@ import {
   Box,
   Stack,
   Avatar,
-  useColorModeValue
+  useColorModeValue,
+  Flex
 } from '@chakra-ui/react';
-import data from "../../../../data/blog.json";
+import data from "../../../../data/temp/blog.json";
 
 interface Props {
+  defaul_image: string;
   tag: string;
   title: string;
   description: string;
@@ -21,10 +23,11 @@ interface Props {
 export default function Card() {
   const bgColor = useColorModeValue('white', 'gray.900');
   const Color = useColorModeValue('gray.700', 'white');
+  const defaulImage = '/blog/default.png'
 
   return (
     <>
-      {data.map(({ tag, title, description, author, date }) => (
+      {data.map(({ defaul_image, tag, title, description, author, date }) => (
         <Box
           maxW={'445px'}
           w={'full'}
@@ -35,23 +38,14 @@ export default function Card() {
           overflow={'hidden'}
           key={title}
         >
-          <Box
-            h={'210px'}
-            bg={'gray.100'} 
-            mt={-6}
-            mx={-6}
-            mb={9}
-            pos={'relative'}
-          >
+          <Flex flex={1} bg="blue.200">
             <Image
-              src={
-                '/blog/what_.png'
-              }
-              alt="image"
-              h={230}
-              w={370}
+              objectFit="cover"
+              boxSize="100%"
+              src={ defaul_image }
+              alt={'cover'}
             />
-          </Box>
+          </Flex>
           <Stack>
             <Text
               color={'blue.400'}

@@ -6,7 +6,6 @@ import {
   Stack,
   Text,
   Flex,
-  Tag,
   useColorModeValue,
   Image,
   Center,
@@ -23,7 +22,7 @@ const Logo = () => {
               src={useColorModeValue('assets/onewanko_logo.png', 'assets/onewanko_logo.png')}
               alt="onewanko"
               height={65}
-              width={105}
+              width={120}
               />
         </Link>
     </>

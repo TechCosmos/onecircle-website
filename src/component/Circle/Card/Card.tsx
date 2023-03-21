@@ -1,9 +1,5 @@
 import {
-  Heading,
   Text,
-  Stack,
-  Badge,
-  useColorModeValue,
   Link,
   Button,
   VStack,
@@ -11,7 +7,7 @@ import {
   Box
 } from "@chakra-ui/react";
 import { FaArrowRight } from "react-icons/fa";
-import data from "../../../../data/circle.json";
+import data from "../../../../data/temp/circle.json";
 
 export default function Card() {
   

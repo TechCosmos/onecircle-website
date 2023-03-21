@@ -1,5 +1,6 @@
 {
   "home": {
+    "defaul_image": "/assets/default.png",
     "title": "We help to build the next generations of the technology.",
     "description_title": "Drive innovation and advance AI field",
     "first_paragraph": "Our focus is on the field of Artificial Intelligence and we believe that open source programs play a crucial role in its advancement. By sharing knowledge and collaborating on open-source projects, we can accelerate the development of AI and make it more accessible to a wider range of people.",

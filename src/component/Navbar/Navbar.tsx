@@ -54,7 +54,7 @@ export default function WithSubnavigation() {
               src={useColorModeValue('assets/onewanko_logo.png', 'asssets/onewanko_logo.png')}
               alt="onewanko"
               height={65}
-              width={105}
+              width={120}
               />
               </Link>
             </Text>

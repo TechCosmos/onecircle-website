@@ -1,8 +1,7 @@
-[
-    {
-      "title": "Open Language",
-      "description":"The Open Language project presents a cutting-edge AI solution for real-time video translation, aimed at addressing the issue of language barriers in the metaverse.",
-      "tag": "Open-Language",
-      "link":"https://github.com/onewanko/Open-Language"
-    }
-]
+{
+  "circle": {
+    "title": "Circle - onewanko",
+    "description_title": "Discover what we are building and join us",
+    "defaul_image": "/assets/default.png"
+  }
+}
