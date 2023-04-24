@@ -11,6 +11,8 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 
+import data from "../../../data/hero.json"
+
 export default function WithBackgroundImage() {
   return (
     <Center
@@ -46,7 +48,7 @@ export default function WithBackgroundImage() {
               fontWeight={700}
               fontSize={useBreakpointValue({ base: "2xl", md: "4xl" })}
             >
-              We help to build the next <br /> generations of AI
+              {data.home.legend}
             </Text>
 
             <Stack

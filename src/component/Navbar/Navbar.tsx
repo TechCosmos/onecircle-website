@@ -212,9 +212,5 @@ const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Circle",
     href: "/circle",
-  },
-  {
-    label: "Blog",
-    href: "/blog",
   }
 ];

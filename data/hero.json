@@ -1,9 +1,9 @@
 {
   "home": {
     "defaul_image": "/assets/default.png",
-    "title": "We help to build the next generations of the technology.",
+    "legend": "We help to build the next generations of the technology.",
     "description_title": "Drive innovation and advance AI field",
-    "first_paragraph": "Our focus is on the field of Artificial Intelligence and we believe that open source programs play a crucial role in its advancement. By sharing knowledge and collaborating on open-source projects, we can accelerate the development of AI and make it more accessible to a wider range of people.",
-    "second_paragraph": "In our community, we have a strong interest in utilizing open source programs in AI development. These programs allow developers to easily create, train, and test machine learning models and share their work with the community. We believe that the combination of open source programs and AI can make significant advancements in various fields. Join us as we explore the possibilities of AI and the impact of open source programs in its development."
+    "first_paragraph": "We aim to democratize artificial intelligence by educating the public on the subject, in order to reduce the number of ignorant people in the field of technology. Through knowledge sharing and community involvement, we can make AI technology open to a wider range of people and thus enhance its development.",
+    "second_paragraph": "We initiate the community, by making available to it: articles, videos, projects, etc., looks like technology. Our content aims to create, train and educate the next generation of technology."
   }
 }
