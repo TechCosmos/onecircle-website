@@ -15,16 +15,16 @@ const  index = () => {
     <Layout>
       <Head>
         <title> {title} </title>
-        <meta name="description" content={data.home.title} />
+        <meta name="description" content={data.home.legend} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content={title} />
-        <meta property="og:description" content={data.home.title}  />
+        <meta property="og:description" content={data.home.legend}  />
         <meta property="og:image" content={data.home.defaul_image} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={link} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={data.home.title}  />
+        <meta name="twitter:description" content={data.home.legend}  />
         <meta name="twitter:image" content={data.home.defaul_image} />
         <meta name="twitter:creator" content={twitter} />
       </Head>
