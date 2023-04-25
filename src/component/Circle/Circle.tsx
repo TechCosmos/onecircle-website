@@ -124,12 +124,6 @@ export default function Circle({ contributors, ...props }) {
           </Container>
         </Box>
       </VStack>
-      <VStack h="auto" bg="blue.400" p={7} w="full" align="start" spacing={4}>
-        <Heading fontSize="2xl" color="white">
-          Team
-        </Heading>
-         
-      </VStack>
     </>
   );
 }
