@@ -46,7 +46,7 @@ export default function Circle() {
         const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
         setCountdown(
-          ` ${days} d - ${hours} h - ${minutes} m - ${seconds} s`
+          ` ${days} : ${hours} : ${minutes} : ${seconds} `
         );
       }
     }, 1000);
@@ -118,8 +118,8 @@ export default function Circle() {
           </Box>
         </Flex>
       </Flex>
-      <VStack h="auto" bg="blue.400" p={7} w="full" align="start" spacing={4}>
-        <Heading id="project" fontSize="2xl" color="white">
+      <VStack h="auto" bg="blue.400" p={7} w="full" textAlign={"center"} spacing={10}>
+        <Heading id="project" fontSize={"3xl"}  color="white">
           Projects
         </Heading>
        
@@ -127,9 +127,9 @@ export default function Circle() {
         <Container maxW={'7xl'} pt="20" mx={'auto'}>
 
           {/* Countdown goes here */}
-          <Container mx="25rem" my="4rem">
+          <Container my="4rem" >
             {countdown ? (
-              <Text fontSize="4xl" fontWeight="bold">
+              <Text fontSize={{base: "3xl", md: "4xl"}} fontWeight="bold" color={"white"}>
                 {countdown}
               </Text>
             ) : (
