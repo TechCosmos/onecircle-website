@@ -17,7 +17,7 @@ import MetaTags from "../utils/meta";
           image="/assets/default.png"
           url="onewanko.com/circle"
         />
-      <Circle contributors={contributors} />
+      <Circle />
     </Layout>
   );
 };
