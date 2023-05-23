@@ -3,6 +3,7 @@ import React from "react";
 import Circle from "../component/Circle/Circle";
 import Layout from "../component/Layout";
 import data from '../../data/circle.json';
+import MetaTags from "../utils/meta";
 
   const circle = ({ contributors, ...props }) => {
   const link = "onewanko.com/circle"
@@ -10,21 +11,12 @@ import data from '../../data/circle.json';
 
   return (
     <Layout>
-      <Head>
-        <title> {data.circle.title} </title>
-        <meta name="description" content={data.circle.description_title} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content={data.circle.title} />
-        <meta property="og:description" content={data.circle.description_title}  />
-        <meta property="og:image" content={data.circle.defaul_image} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={link} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={data.circle.title} />
-        <meta name="twitter:description" content={data.circle.description_title}  />
-        <meta name="twitter:image" content={data.circle.defaul_image} />
-        <meta name="twitter:creator" content={twitter} />
-      </Head>
+      <MetaTags
+          title="Circle - Onewanko"
+          description="Join our community: Build together, Grow together"
+          image="/assets/default.png"
+          url="onewanko.com/circle"
+        />
       <Circle contributors={contributors} />
     </Layout>
   );

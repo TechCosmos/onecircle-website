@@ -49,19 +49,17 @@ export default function LargeWithLogoCentered() {
           spacing={5}>
           <Stack align={"flex-start"}>
             <ListHeader>Onewanko media</ListHeader>
-            <Link href={"/"}>Overview</Link>
+            <Link href={"/#features"}>Overview</Link>
             <Link href={"/circle"}>Current projects</Link>
-            <Link href={"https://github.com/onewanko/"}>Contributing</Link>
             <Link href={"#"}>Releases</Link>
             <Link href={"#"}>Privacy Policy</Link>
           </Stack>
           <Stack align={"flex-start"}>
             <ListHeader>Follow onewanko</ListHeader>
             <Link href={"https://youtube.com/onewanko"}>Youtube</Link>
-            <Link href={"https://twitter.com/onewankoorg"}>Twitter</Link>
-            <Link href={"https://tiktok.com/onewanko"}>Tiktok</Link>
+            <Link href={"https://twitter.com/onewankolabs"}>Twitter</Link>
+            <Link href={"https://tiktok.com/@onewanko"}>Tiktok</Link>
             <Link href={"https://instagram.com/onewanko"}>Instagram</Link>
-            <Link href={"https://github.com/onewanko/onewanko-website"}>Github</Link>
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Stay up to date</ListHeader>

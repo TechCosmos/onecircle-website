@@ -10,43 +10,50 @@ import {
   useBreakpointValue,
   VStack,
   useColorModeValue,
+  Center,
+  CircularProgress,
 } from "@chakra-ui/react";
-import Image from "next/image";;
-import useSWR from "swr";
+import Image from "next/image";
 import Card from "./Card/Card";
+import React, { useState, useEffect } from "react";
 
-const fetcher = (url: RequestInfo | URL) =>
-  fetch(url).then((response) => {
-    return response.json();
-  });
-  
-/*
-function TeamCard({ url, ...props }) {
-  const { data, isLoading } = useSWR(url, fetcher);
 
-  if (!isLoading) {
-    return (
-      <VStack
-        bg={"white"}
-        w="300px"
-        maxW="300px"
-        py={5}
-        rounded="lg"
-        spacing={3}
-      >
-        <Avatar name={data.login} src={data.avatar_url} />
-        <Text fontWeight="bold">{data.login}</Text>
-        <Text maxW="70%" fontSize="sm" noOfLines={1}>
-          {data.bio ? data.bio : "Contibutor to Onewanko"}
-        </Text>
-      </VStack>
-    );
-  }
-}
-*/
 
-export default function Circle({ contributors, ...props }) {
+export default function Circle() {
   const legend = '"Build together, Grow together"'
+  
+  const [countdown, setCountdown] = useState(null);
+
+  useEffect(() => {
+    const targetDate = new Date();
+    targetDate.setMonth(targetDate.getMonth() + 3);
+
+    const interval = setInterval(() => {
+    const currentDate = new Date();
+    const remainingTime = targetDate.getTime() - currentDate.getTime();
+
+      if (remainingTime <= 0) {
+        clearInterval(interval);
+        setCountdown("Countdown reached 0!");
+      } else {
+        const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor(
+          (remainingTime % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+        setCountdown(
+          ` ${days} d - ${hours} h - ${minutes} m - ${seconds} s`
+        );
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
 
   return (
     <>
@@ -95,7 +102,7 @@ export default function Circle({ contributors, ...props }) {
               px={12}
               py={"6"}
             >
-              <Link href="/circle" _hover={{ textDecoration: "none" }}>
+              <Link href="/circle#project" _hover={{ textDecoration: "none" }}>
                 Join
               </Link>
             </Button>
@@ -112,15 +119,30 @@ export default function Circle({ contributors, ...props }) {
         </Flex>
       </Flex>
       <VStack h="auto" bg="blue.400" p={7} w="full" align="start" spacing={4}>
-        <Heading fontSize="2xl" color="white">
+        <Heading id="project" fontSize="2xl" color="white">
           Projects
         </Heading>
        
         <Box m={'auto'}>
         <Container maxW={'7xl'} pt="20" mx={'auto'}>
-        <Grid templateColumns={{ base: 'repeat(1, 1fr)', sm: 'repeat(1, 1fr)' , md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)', xl: 'repeat(4, 1fr)' }} gap={6} px={6}>
-          <Card />
+
+          {/* Countdown goes here */}
+          <Container mx="25rem" my="4rem">
+            {countdown ? (
+              <Text fontSize="4xl" fontWeight="bold">
+                {countdown}
+              </Text>
+            ) : (
+              <CircularProgress isIndeterminate color="blue.400" />
+            )}
+          </Container>
+
+          {/* 
+          <Grid templateColumns={{ base: 'repeat(1, 1fr)', sm: 'repeat(1, 1fr)' , md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)', xl: 'repeat(4, 1fr)' }} gap={6} px={6}>
+             <Card /> 
           </Grid> 
+          */}
+
           </Container>
         </Box>
       </VStack>
@@ -128,12 +150,3 @@ export default function Circle({ contributors, ...props }) {
   );
 }
 
- // <Wrap>
-         // {contributors.map((contributor: {login: string, url: string}) => {
-         //  return (
-         //      <WrapItem key={contributor.login}>
-         //        <TeamCard key={contributor.login} url={contributor.url} />
-         //       </WrapItem>
-         //  );
-         //     })}
-         //  </Wrap> 

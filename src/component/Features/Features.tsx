@@ -6,7 +6,7 @@ export default function gridListWithCTA() {
   return (
     <Box w="full" minH="100vh" background="blue.400" p={7} color="white">
       <VStack textAlign={"center"} spacing={20}>
-        <Heading fontSize={"3xl"}>{data.home.description_title}</Heading>
+        <Heading id="features" fontSize={"3xl"}>{data.home.description_title}</Heading>
         <VStack spacing={20}>
           <Flex
             textAlign={{ base: "center", lg: "right" }}
