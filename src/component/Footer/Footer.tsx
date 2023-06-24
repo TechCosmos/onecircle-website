@@ -8,11 +8,10 @@ import {
   Flex,
   useColorModeValue,
   Image,
-  Center,
-  IconButton,
+  Container,
+  Tag,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
-import { BiMailSend } from 'react-icons/bi';
 
 const Logo = () => {
   return (
@@ -40,52 +39,51 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 export default function LargeWithLogoCentered() {
   return (
     <Box
-      bg={useColorModeValue("gray.50", "gray.900")}
+      bg={useColorModeValue("#F7FAFC", "#F7FAFC")}
       color={useColorModeValue("gray.700", "gray.200")}
-    >
-      <Center w="full" py={10}>
-      <SimpleGrid
-          templateColumns={{ sm: '1fr 1fr', md: '1fr 1fr 1fr' }}
-          spacing={5}>
-          <Stack align={"flex-start"}>
+    > 
+
+      <Container as={Stack} maxW={'6xl'} py={10}>
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
+          <Stack align={'flex-start'}>
             <ListHeader>Onewanko media</ListHeader>
             <Link href={"/#features"}>Overview</Link>
+            <Stack direction={'row'} align={'center'} spacing={2}></Stack>
             <Link href={"/circle"}>Current projects</Link>
+            <Tag
+                size={'sm'}
+                bg={useColorModeValue('blue.300', 'blue.800')}
+                ml={2}
+                color={'white'}>
+                New
+              </Tag>
             <Link href={"#"}>Releases</Link>
-            <Link href={"#"}>Privacy Policy</Link>
           </Stack>
-          <Stack align={"flex-start"}>
-            <ListHeader>Follow onewanko</ListHeader>
+          <Stack align={'flex-start'}>
+            <ListHeader>Company</ListHeader>
+            <Link href={'#'}>About Us</Link>
+            <Link href={'#'}>Careers</Link>
+            <Link href={'#'}>Contact Us</Link>
+            <Link href={'#'}>Partners</Link>
+          </Stack>
+          <Stack align={'flex-start'}>
+            <ListHeader>Legal</ListHeader>
+            <Link href={'#'}>Cookies Policy</Link>
+            <Link href={'#'}>Privacy Policy</Link>
+            <Link href={'#'}>Terms of Service</Link>
+            <Link href={'#'}>Status</Link>
+          </Stack>
+          <Stack align={'flex-start'}>
+            <ListHeader>Follow Onewanko</ListHeader>
             <Link href={"https://youtube.com/onewanko"}>Youtube</Link>
             <Link href={"https://twitter.com/onewankolabs"}>Twitter</Link>
             <Link href={"https://tiktok.com/@onewanko"}>Tiktok</Link>
             <Link href={"https://instagram.com/onewanko"}>Instagram</Link>
           </Stack>
-          <Stack align={'flex-start'}>
-            <ListHeader>Stay up to date</ListHeader>
-            <Stack direction={'row'}>
-              <Input
-                placeholder={'Your email address'}
-                bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
-                border={0}
-                _focus={{
-                  bg: 'whiteAlpha.300',
-                }}
-              />
-              <IconButton
-                bg={useColorModeValue('blue.400', 'blue.800')}
-                color={useColorModeValue('white', 'gray.800')}
-                _hover={{
-                  bg: 'blue.600',
-                }}
-                aria-label="Subscribe"
-                icon={<BiMailSend />}
-              />
-            </Stack>
-          </Stack>
         </SimpleGrid>
-      </Center>
-      <Box py={10}>
+      </Container>
+     
+      <Box py={3}>
         <Flex
           align={"center"}
           _before={{
