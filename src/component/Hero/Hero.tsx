@@ -28,8 +28,8 @@ export default function WithBackgroundImage() {
         <Image
           src={"/assets/hero-img.svg"}
           alt={"hero-image"}
-          width="843"
-          height="611"
+          width="743"
+          height="711"
           priority
         />
 
@@ -46,7 +46,7 @@ export default function WithBackgroundImage() {
             <Text
               color={"black"}
               fontWeight={700}
-              fontSize={useBreakpointValue({ base: "2xl", md: "4xl" })}
+              fontSize={useBreakpointValue({ base: "2xl", md: "3xl" })}
             >
               {data.home.legend}
             </Text>

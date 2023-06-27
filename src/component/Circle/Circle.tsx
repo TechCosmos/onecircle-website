@@ -102,7 +102,7 @@ export default function Circle() {
               px={12}
               py={"6"}
             >
-              <Link href="/circle#project" _hover={{ textDecoration: "none" }}>
+              <Link href="#project" _hover={{ textDecoration: "none" }}>
                 Join
               </Link>
             </Button>
