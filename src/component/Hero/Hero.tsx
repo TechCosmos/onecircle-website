@@ -1,80 +1,89 @@
 import {
   Button,
   Center,
-  Flex,
   Link,
-  Stack,
-  useColorModeValue,
   Text,
   useBreakpointValue,
   VStack,
+  Box,
 } from "@chakra-ui/react";
-import Image from "next/image";
+import { motion } from "framer-motion";
 
-import data from "../../../data/hero.json"
-
-export default function WithBackgroundImage() {
+export default function WithBackgroundVideo() {
   return (
-    <Center
-      w={"full"}
-      h={"calc(100vh - 80px)"}
-      bg={useColorModeValue('white', 'black')}
-    >
-      <Flex
-        w="75%"
-        direction={{ base: "column", md: "row" }}
-        alignItems={{ base: "center", md: "unset" }}
-      >
-        <Image
-          src={"/assets/hero-img.svg"}
-          alt={"hero-image"}
-          width="743"
-          height="711"
-          priority
-        />
-
+    <Box position="relative" overflow="hidden">
+      <video
+        src="/assets/background.mp4"
+        autoPlay
+        loop
+        muted
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          position: "absolute",
+          top: 0,
+          left: 0,
+        }}
+      />
+      <Box
+        position="absolute"
+        top={0}
+        left={0}
+        width="100%"
+        height="100%"
+        bg="rgba(0, 0, 0, 0.7)"
+      />
+      <Center position="relative" zIndex={1}>
         <VStack
-          // w={"full"}
-          justify={"center"}
-          alignItems="flex-end"
+          justify="center"
+          alignItems="center"
+          spacing={8}
           px={useBreakpointValue({ base: 4, md: 8 })}
-          textAlign={{ base: "center", md: "right" }} // hero text alignment
-          // bgGradient={"linear(to-r, blackAlpha.600, transparent)"}
+          textAlign="center"
+          py={{ base: "40vh", md: "50vh" }}
         >
-          <Stack maxW={"2xl"} spacing={6}>
-            
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             <Text
-              color={"black"}
+              color="gray.100"
               fontWeight={700}
               fontSize={useBreakpointValue({ base: "2xl", md: "3xl" })}
             >
-              {data.home.legend}
+              Onewanko labs: We build technology.
             </Text>
+          </motion.div>
 
-            <Stack
-              direction={"row"}
-              alignSelf={{ base: "center", md: "flex-end" }}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            <Button
+              bg="transparent"
+              border="1px solid"
+              borderColor="blue.400"
+              color="blue.400"
+              rounded="full"
+              _hover={{
+                borderColor: "transparent",
+                color: "white",
+              }}
+              size="lg"
+              fontWeight="bold"
+              letterSpacing="wide"
+              textTransform="uppercase"
             >
-              <Button
-                bg={"blue.400"}
-                rounded={"full"}
-                color={"white"}
-                _hover={{ bg: "blue.500" }}
-                size="lg"
-              >
-                <Link href="/circle" _hover={{ textDecoration: "none" }}>
-                  Show me more
-                </Link>
-              </Button>
-
-            </Stack>
-            
-          </Stack>
-
+              <Link href="#circle" _hover={{ textDecoration: "none" }}>
+                Show me more
+              </Link>
+            </Button>
+          </motion.div>
         </VStack>
-
-      </Flex>
-
-    </Center>
+      </Center>
+    </Box>
   );
 }

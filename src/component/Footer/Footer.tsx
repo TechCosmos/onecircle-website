@@ -1,112 +1,57 @@
-import {
-  Box,
-  Input,
-  Link,
-  SimpleGrid,
-  Stack,
-  Text,
-  Flex,
-  useColorModeValue,
-  Image,
-  Container,
-  Tag,
-} from "@chakra-ui/react";
-import { ReactNode } from "react";
+import React from 'react';
+import { Box, chakra, Stack, Text, Image, useColorModeValue, VisuallyHidden } from '@chakra-ui/react';
+import { FaTwitter, FaYoutube, FaTiktok } from 'react-icons/fa';
 
-const Logo = () => {
+const SocialButton = ({ children, label, href }) => {
   return (
-    <>
-       <Link href="/">
-              <Image
-              src={useColorModeValue('assets/onewanko_logo.png', 'assets/onewanko_logo.png')}
-              alt="onewanko"
-              height={65}
-              width={120}
-              />
-        </Link>
-    </>
-  );
-};
-
-const ListHeader = ({ children }: { children: ReactNode }) => {
-  return (
-    <Text fontWeight={"500"} fontSize={"lg"} mb={2}>
+    <chakra.a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      display="inline-flex"
+      alignItems="center"
+      justifyContent="center"
+      w={8}
+      h={8}
+      rounded="full"
+      bg="transparent"
+      transition="background 0.3s ease"
+      _hover={{ bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200') }}
+    >
+      <VisuallyHidden>{label}</VisuallyHidden>
       {children}
-    </Text>
+    </chakra.a>
   );
 };
 
-export default function LargeWithLogoCentered() {
+const Footer = () => {
   return (
-    <Box
-      bg={useColorModeValue("#F7FAFC", "#F7FAFC")}
-      color={useColorModeValue("gray.700", "gray.200")}
-    > 
-
-      <Container as={Stack} maxW={'6xl'} py={10}>
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
-          <Stack align={'flex-start'}>
-            <ListHeader>Onewanko media</ListHeader>
-            <Link href={"/#features"}>Overview</Link>
-            <Stack direction={'row'} align={'center'} spacing={2}></Stack>
-            <Link href={"/circle"}>Current projects</Link>
-            <Tag
-                size={'sm'}
-                bg={useColorModeValue('blue.300', 'blue.800')}
-                ml={2}
-                color={'white'}>
-                New
-              </Tag>
-            <Link href={"#"}>Releases</Link>
-          </Stack>
-          <Stack align={'flex-start'}>
-            <ListHeader>Company</ListHeader>
-            <Link href={'#'}>About Us</Link>
-            <Link href={'#'}>Careers</Link>
-            <Link href={'#'}>Contact Us</Link>
-            <Link href={'#'}>Partners</Link>
-          </Stack>
-          <Stack align={'flex-start'}>
-            <ListHeader>Legal</ListHeader>
-            <Link href={'#'}>Cookies Policy</Link>
-            <Link href={'#'}>Privacy Policy</Link>
-            <Link href={'#'}>Terms of Service</Link>
-            <Link href={'#'}>Status</Link>
-          </Stack>
-          <Stack align={'flex-start'}>
-            <ListHeader>Follow Onewanko</ListHeader>
-            <Link href={"https://youtube.com/onewanko"}>Youtube</Link>
-            <Link href={"https://twitter.com/onewankolabs"}>Twitter</Link>
-            <Link href={"https://tiktok.com/@onewanko"}>Tiktok</Link>
-            <Link href={"https://instagram.com/onewanko"}>Instagram</Link>
-          </Stack>
-        </SimpleGrid>
-      </Container>
-     
-      <Box py={3}>
-        <Flex
-          align={"center"}
-          _before={{
-            content: '""',
-            borderBottom: "1px solid",
-            borderColor: useColorModeValue("gray.200", "gray.700"),
-            flexGrow: 1,
-            mr: 8,
-          }}
-          _after={{
-            content: '""',
-            borderBottom: "1px solid",
-            borderColor: useColorModeValue("gray.200", "gray.700"),
-            flexGrow: 1,
-            ml: 8,
-          }}
-        >
-          <Logo />
-        </Flex>
-        <Text pt={6} fontSize={"sm"} textAlign={"center"}>
-          © 2023 Onewanko. All rights reserved
-        </Text>
-      </Box>
+    <Box bg="black" py={6} color="gray.100">
+      <Stack
+        direction={{ base: 'column', md: 'row' }}
+        spacing={4}
+        justify={{ base: 'center', md: 'space-between' }}
+        align={{ base: 'center', md: 'center' }}
+        maxW="6xl"
+        mx="auto"
+        px={6}
+      >
+        <Image src="assets/onewanko_logo.png" height={38} alt="Logo" />
+        <Text>© 2023 Onewanko labs. All rights reserved.</Text>
+        <Stack direction="row" spacing={6}>
+          <SocialButton label="Twitter" href="https://www.twitter.com/onewankolabs">
+            <FaTwitter />
+          </SocialButton>
+          <SocialButton label="YouTube" href="https://www.youtube.com/onewanko">
+            <FaYoutube />
+          </SocialButton>
+          <SocialButton label="Tiktok" href="https://www.tiktok.com/onewanko">
+            <FaTiktok />
+          </SocialButton>
+        </Stack>
+      </Stack>
     </Box>
   );
-}
+};
+
+export default Footer;

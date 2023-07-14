@@ -2,24 +2,26 @@ import {
   CloseIcon, HamburgerIcon,
 } from "@chakra-ui/icons";
 import {
-  Box, Collapse, Flex, IconButton, Image, Link, Stack, Text, 
-  useBreakpointValue, useColorModeValue, useDisclosure,
+  Box, Collapse, Flex, IconButton, Image, Link, Stack, Text, useBreakpointValue, useColorModeValue, useDisclosure,
 } from "@chakra-ui/react";
 
-
-
 export default function WithSubnavigation() {
-  const logoPath = "assets/onewanko_logo.png"
+  const logoPath = "assets/onewanko_logo.png";
   const { isOpen, onToggle } = useDisclosure();
-  const backgroundColor = useColorModeValue('white', 'black');
-  const textColor = useColorModeValue('gray.600', 'white');
-  const logoColor = useColorModeValue('gray.800', 'white');
-  const borderColor = useColorModeValue('gray.200', 'gray.900');
+  const textColor = useColorModeValue("gray.600", "white");
+  const logoColor = useColorModeValue("gray.800", "white");
+  const borderColor = useColorModeValue("gray.200", "gray.900");
 
   return (
-    <Box w="100%" h="auto">
+    <Box 
+      w="100%"
+      h="80px"
+      position="fixed"
+      top={0}
+      bg="transparent"
+      zIndex={999}
+      >
       <Flex
-        bg={backgroundColor}
         color={textColor}
         minH="80px"
         py={{ base: 2 }}
@@ -27,7 +29,6 @@ export default function WithSubnavigation() {
         borderColor={borderColor}
         align="center"
       >
-        {/* Mobile menu button */}
         <Flex
           flex={{ base: 0.3, md: "auto" }}
           ml={{ base: -2 }}
@@ -40,23 +41,22 @@ export default function WithSubnavigation() {
             aria-label="Toggle Navigation"
           />
         </Flex>
-        {/* Desktop view */}
         <Flex flex={{ base: 1 }} justify="center" alignItems="center">
           <Flex width="75%" justify="space-between" alignItems="center">
-            {/* Logo */}
-            <Text textAlign={useBreakpointValue({ base: "center", md: "left" })} fontFamily="heading" color={logoColor}>
+            <Text
+              textAlign={useBreakpointValue({ base: "center", md: "left" })}
+              fontFamily="heading"
+              color={logoColor}
+            >
               <Link href="/">
                 <Image src={logoPath} alt="onewanko" height={75} width={125} />
               </Link>
             </Text>
-            {/* Menus */}
             <Flex display={{ base: "none", md: "flex" }} ml={10}>
               <DesktopNav />
             </Flex>
-            {/* Menu end */}
           </Flex>
         </Flex>
-        {/* Desktop view end */}
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
@@ -66,10 +66,9 @@ export default function WithSubnavigation() {
   );
 }
 
-
 const DesktopNav = () => {
-  const linkColor = useColorModeValue('gray.600', 'gray.200');
-  const linkHoverColor = useColorModeValue('gray.800', 'white');
+  const linkColor = useColorModeValue("gray.100", "gray.100");
+  const linkHoverColor = useColorModeValue("gray.400", "gray.400");
 
   return (
     <Stack direction="row" spacing={4}>
@@ -77,12 +76,12 @@ const DesktopNav = () => {
         <Box key={navItem.label}>
           <Link
             p={2}
-            href={navItem.href ?? '#'}
+            href={navItem.href ?? "#"}
             fontSize="15"
             fontWeight="800"
             color={linkColor}
             _hover={{
-              textDecoration: 'none',
+              textDecoration: "none",
               color: linkHoverColor,
             }}
           >
@@ -95,10 +94,10 @@ const DesktopNav = () => {
 };
 
 const MobileNav = () => {
-  const bgColor = useColorModeValue('white', 'gray.800');
+  const bgColor = "transparent"; 
 
   return (
-    <Stack bg={bgColor} p={4} display={{ md: 'none' }} justify="center">
+    <Stack bg={bgColor} p={4} display={{ md: "none" }} justify="center">
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
@@ -107,11 +106,18 @@ const MobileNav = () => {
 };
 
 const MobileNavItem = ({ label, href }: NavItem) => {
-  const textColor = useColorModeValue('gray.600', 'gray.200');
+  const textColor = useColorModeValue("gray.100", "gray.100");
 
   return (
     <Stack spacing={4}>
-      <Flex py={2} as={Link} href={href ?? '#'} justify="space-between" align="center" _hover={{ textDecoration: 'none' }}>
+      <Flex
+        py={2}
+        as={Link}
+        href={href ?? "#"}
+        justify="space-between"
+        align="center"
+        _hover={{ textDecoration: "none" }}
+      >
         <Text fontWeight={600} color={textColor}>
           {label}
         </Text>
@@ -132,6 +138,10 @@ const NAV_ITEMS: NavItem[] = [
   },
   {
     label: "Circle",
-    href: "/circle",
+    href: "/#circle",
+  },
+  {
+    label: "NewsLetter",
+    href: "/newsletter",
   },
 ];
