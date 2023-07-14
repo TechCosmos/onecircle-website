@@ -140,8 +140,4 @@ const NAV_ITEMS: NavItem[] = [
     label: "Circle",
     href: "/#circle",
   },
-  {
-    label: "NewsLetter",
-    href: "/newsletter",
-  },
 ];
