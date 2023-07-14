@@ -20,7 +20,7 @@ export default function NotFoundPage() {
           <VStack spacing={6} color={"black"}>
             
             <Heading as="h1" size="xl" color="white">
-              404 - Page Not Found
+              404 - Page Not Found 
             </Heading>
             <Text fontSize="xl" color="gray.400" >
               The page you're looking for could not be found.
