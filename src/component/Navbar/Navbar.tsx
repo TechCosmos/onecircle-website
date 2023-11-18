@@ -136,8 +136,4 @@ const NAV_ITEMS: NavItem[] = [
     label: "Home",
     href: "/",
   },
-  {
-    label: "Circle",
-    href: "/#circle",
-  },
 ];

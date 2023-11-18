@@ -1,6 +1,5 @@
 import React from 'react';
 import Hero from '../component/Hero/Hero';
-import Feature from '../component/Features/Features';
 import Layout from '../component/Layout';
 import MetaTags from '../utils/meta';
 
@@ -16,7 +15,6 @@ const  index = () => {
           url="onewanko.com"
         />
       <Hero />
-      <Feature />
     </Layout>
   )
 }

@@ -42,11 +42,8 @@ const Footer = () => {
           <SocialButton label="Twitter" href="https://www.twitter.com/onewankolabs">
             <FaTwitter />
           </SocialButton>
-          <SocialButton label="YouTube" href="https://www.youtube.com/onewanko">
+          <SocialButton label="YouTube" href="https://www.youtube.com/@onewanko">
             <FaYoutube />
-          </SocialButton>
-          <SocialButton label="Tiktok" href="https://www.tiktok.com/onewanko">
-            <FaTiktok />
           </SocialButton>
         </Stack>
       </Stack>

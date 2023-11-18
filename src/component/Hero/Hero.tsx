@@ -56,32 +56,6 @@ export default function WithBackgroundVideo() {
               Onewanko labs: We build technology.
             </Text>
           </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-          >
-            <Button
-              bg="transparent"
-              border="1px solid"
-              borderColor="blue.400"
-              color="blue.400"
-              rounded="full"
-              _hover={{
-                borderColor: "transparent",
-                color: "white",
-              }}
-              size="lg"
-              fontWeight="bold"
-              letterSpacing="wide"
-              textTransform="uppercase"
-            >
-              <Link href="#circle" _hover={{ textDecoration: "none" }}>
-                Show me more
-              </Link>
-            </Button>
-          </motion.div>
         </VStack>
       </Center>
     </Box>
