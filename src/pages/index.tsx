@@ -9,8 +9,8 @@ const  index = () => {
     
     <Layout>
       <MetaTags
-          title="Onewanko labs: We build technology"
-          description="We build technology"
+          title="Onewanko labs"
+          description="An Investor Group Building Technology"
           image="/assets/default.png"
           url="onewanko.com"
         />
