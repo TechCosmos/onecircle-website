@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function WithBackgroundVideo() {
   return (
-    <Box position="relative" h="100vh" w="100vw" overflow="hidden">
+    <Box position="relative" h="100vh" w="100%" overflow="hidden">
       <video
         src="/assets/background.mp4"
         autoPlay

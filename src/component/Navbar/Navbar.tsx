@@ -8,7 +8,7 @@ export default function Navbar() {
     <Box w="100%" h="100px" position="fixed" top={0} bg="transparent" zIndex={999}>
       <Flex minH="80px" align="center" justify="center">
         <Flex alignItems="center" fontFamily="heading" color={logoColor}>
-          <Image src={logoPath} alt="onewanko" height={{base:100, md:130}} width={{base:150, md:200}} />
+          <Image src={logoPath} alt="onewanko" height={{base:90, md:115}} width={{base:150, md:200}} />
         </Flex>
       </Flex>
     </Box>
