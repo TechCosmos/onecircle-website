@@ -51,16 +51,11 @@ export default function WithBackgroundVideo() {
               fontWeight="bold"
               mb={8}
             >
-              An Investor Group Building Technology
+              Straight-talking investor. No BS.
             </Text>
             <Text fontSize={{ base: "md", md: "lg" }} mb={4}>
-              We invest in great technology and develop innovative solutions 
-              that have a beneficial effect. We aim to push the boundaries of what's 
-              possible and build a more promising future for all.
-            </Text>
-            <Text fontSize={{ base: "md", md: "lg" }}>
-            Together with a team of specialists and a passion for innovation, our goal 
-            is to solve complex problems and make a difference in the world.
+             We find the next big thing or build it, back it, and make it happen.  
+             Let's disrupt industries and change the world.
             </Text>
           </motion.div>
         </VStack>
