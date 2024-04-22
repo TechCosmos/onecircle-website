@@ -46,17 +46,6 @@ export default function WithBackgroundVideo() {
             >
               Onewanko labs
             </Text>
-            <Text
-              fontSize={{ base: "xl", md: "1xl" }}
-              fontWeight="bold"
-              mb={8}
-            >
-              Straight-talking investor. No BS.
-            </Text>
-            <Text fontSize={{ base: "md", md: "lg" }} mb={4}>
-             We find the next big thing or build it, back it, and make it happen.  
-             Let's disrupt industries and change the world.
-            </Text>
           </motion.div>
         </VStack>
       </Center>
